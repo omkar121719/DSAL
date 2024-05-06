@@ -1,0 +1,109 @@
+Problem Statement:
+
+Consider telephone book database of N clients. Make use of a hash table implementation to
+quickly look up client‘s telephone number. Make use of two collision handling techniques and
+compare them using number of comparisons required to find a set of telephone numbers.
+Objectives:
+1. Understand the concept of ADT functions
+2. Understand the concept of Hashing
+Outcomes:
+1. Will be able to use concept of ADT
+2. Will be able to store records in hash table using hashing.
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+
+Theory:-
+1. Hashing :
+Hashing is finding an address where the data is to be stored as well as located using a key with the
+help of the algorithmic function. The resulting address is used as the basis for storing and
+retrieving records and this address is called as home address of the record .For array to store a
+record in a hash table, hash function is applied to the key being stored, returning an index within
+the range of the hash table .The item is then stored in the table of that index position.
+2. Hash function:
+Hashing is a method of directly computing the address of the record with the help of a key by
+using a suitable mathematical function called the hash function. A function that maps a key into
+the range [0 to Max − 1], the result of which is used as an index (or address) to hash table for
+storing and retrieving record.
+3. Hash table:
+Hash table is one of the most important data structures that uses a special function known as a
+hash function that maps a given value with a key to access the elements faster. A Hash table is a
+data structure that stores some information, and the information has basically two main
+components, i.e., key and value. The hash table can be implemented with the help of an
+associative array. The efficiency of mapping depends upon the efficiency of the hash function
+used for mapping. A hash table is a data structure that stores records in an array, called a hash
+table. A Hash table can be used for quick insertion and searching.
+Here, are pros/benefits of using hash tables:
+1. Hash tables have high performance when looking up data, inserting, and deleting existing
+values.
+2. The time complexity for hash tables is constant regardless of the number of items in the table.
+3. They perform very well even when working with large datasets.
+Here, are cons of using hash tables:
+1. You cannot use a null value as a key.
+2. Collisions cannot be avoided when generating keys using. hash functions. Collisions occur
+when a key that is already in use is generated.
+3. If the hashing function has many collisions, this can lead to a performance decrease
+Here, are the Operations supported by Hash tables:
+1. Insertion – this Operation is used to add an element to the hash table
+2. Searching – this Operation is used to search for elements in the hash table using the key
+3. Deleting – this Operation is used to delete elements from the hash table
+Real-world Applications
+In the real-world, hash tables are used to store data for
+1. Databases 2. Associative arrays 3. Sets 4. Memory cache.
+Hashing is one of the searching techniques that uses a constant time. The time complexity in
+hashing is O(1). Till now, we read the two techniques for searching, i.e., linear search and binary
+search The worst time complexity in linear search is O(n), and O(logn) in binary search. In both
+the searching techniques, the searching depends upon the number of elements but we want the
+technique that takes a constant time. So, hashing technique came that provides a constant time. In
+Hashing technique, the hash table and hash function are used. Using the hash function, we can
+calculate the address at which the value can be stored
+The main idea behind the hashing is to create the (key/value) pairs. If the key is given, then the
+algorithm computes the index at which the value would be stored.
+It can be written as: • Index = hash(key)
+Collision:
+When the two different values have the same index, then the problem occurs between the two
+values, known as a collision.
+Example:
+If size of hash table is 10. The value 16 is stored at index 6. If the key value is 26, then the index
+would be: h(26) = 26%10 = 6 Therefore, two values are stored at the same index, i.e., 6, and this
+leads to the collision problem.
+To resolve these collisions, we have some techniques known as collision techniques. The
+following are the collision techniques:
+Open Hashing: It is also known as closed addressing.
+Closed Hashing: It is also known as open addressing.
+Steps of Implementation:
+1. Singly link list used for implementation of hashing. Create the structure for the node.
+2. Create hashing class containing hashing () constructor for the initialization of hash table
+with , hash function Create() ,Search(), Delete(), Insert()Function for implementation of hashing,
+and perform collision handling in hashing using chaining.
+3. Create()- Create new node to store element after a collision occurs used create() function.
+4. Display()- To display hash table.
+i)Starting from 0 to last inex.. Create temp node i.e. new node and assign Value of index of hash
+table to temp node first.
+ii)Display that value like a[ 0] while temp not equal to Null.
+5. Search() -
+To search particular number.
+i)Boolean flag have two value true or false. User enter telephone number which want to search.on
+that number we apply hash function. Get hash value i.e.index of element.
+ii)Whatever location of hash value move toward to that node that node is consider as Entry node.
+At particular location value not found then need to search next link list available at that particular
+index. While entry is not equal to null. If we are get match then print element position, element set
+flag to true otherwise flag is false.
+iii) If entry is null means element not found.
+6. Delete()
+To delete the element from hash tabl
+i)Calculate index by applying hash function on that value.
+ii)Then search value at that location of index. For that index value consider as entry value.
+iii)If entry value NULL then no element to delete.
+iv)Value of entry node is equal to value which need to delete if match then
+delete element and entry node point to next node.
+v)If entry of value not matching till last then message element not fond in hash table.
+7. Insert()
+To insert element in hash table
+i) Create two node one is temp and another is head.
+ii) Initial node consider as temp. Next node which is to be inserted consider as head node
+iii) When new element is inserted then consider head node as temp and new element
+node as head.
+Conclusion: Thus we have implemented hashing and collision handling techniques & Make use
+of a hash table implementation to quickly look up client‘s telephone number.

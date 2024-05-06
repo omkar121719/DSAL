@@ -1,0 +1,69 @@
+
+EXPERIMENT NO: 8 (C)
+Problem Statement:
+You have a business with several offices; you want to lease phone lines to connect them up with each other; and the phone company charges different amounts of money to connect different pairs of cities. You want a set of lines that connects all your offices with a minimum total cost. Solve the problem by suggesting appropriate data structures.
+Objectives:
+1. To understand minimum spanning tree of a Graph
+2. To understand how Prim's algorithm works
+Outcomes:
+Stduents will be able to understand concept of minimum spanning tree with Prims algorithm.
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+Data structures to be used:
+Array: Two dimensional array (adjacency matrix) to store the adjacent vertices & the weights associated edges. One dimensional array to store an indicator for each vertex whether visited or not.
+#define max 20
+int adj_ver[max][max]; int edge_wt[max][max];int ind[max];
+Concepts to be used:
+* Arrays
+* Function to construct head list & adjacency matrix for a graph.
+* Function to display adjacency matrix of a graph.
+* Function to generate minimum spanning tree for a graph using Prim's algorithm.
+
+Spanning Tree:
+A Spanning Tree of a graph G = (V, E) is a sub graph of G having all vertices of G and no cycles in it.
+
+Minimal Spanning Tree: The cost of a graph is the sum of the costs of the edges in the weighted graph. A spanning tree of a graph G= (V, E) is called minimal cost spanning tree or simply the minimal spanning tree of G if its cost is minimum.
+
+* When a graph G is connected, depth first or breadth first search starting at any vertex visits all the vertices in G.
+* The edges of G are partitioned into two sets i.e. T for the tree edges & B for back edges. T is the  set of tree edges and B for back edges. T is the set of edges used or traversed during the search & B is the set of remaining edges.
+
+* The edges of G in T form a tree which includes all the vertices of graph G and this tree is called as spanning tree.
+
+Definition: Any tree, which consists solely of edges in graph G and includes all the vertices in G, is called as spanning tree. Thus for a given connected graph there are multiple spanning trees possible. For maximal connected graph having =n' vertices the number of different possible spanning trees is equal to n.
+Cycle: If any edge from set B of graph G is introduced into the corresponding spanning tree T of graph G then cycle is formed. This cycle consists of edge (v, w) from the set B and all edges on the path from w to v in T.
+
+* Prim's algorithm:
+Prim's algorithm is an algorithm in graph theory that finds a minimum spanning tree for a connected weighted graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. The algorithm was discovered in 1930 by mathematician Vojtech Jarník and later independently by computer scientist Robert C. Prim in 1957 and rediscovered by Edsger Dijkstra in 1959. Therefore it is sometimes called the DJP algorithm, the Jarník algorithm, or the Prim-Jarník algorithm.
+
+An arbitrary node is chosen initially as the tree root (any node can be considered as root node for a graph). The nodes of the graph are then appended to the tree one at a time until all nodes of the graph are included. The node of the graph added to the tree at each pointis that node adjacent to a node of the tree by an arc of minimum weight. The arc of minimum weight becomes a tree arc containing the new node to tree. When all the nodesof the graph have been added to the tree, a minimum spanning tree has been constructed for the graph.
+
+Algorithm / Pseudo code:
+* Prim's Algorithm:
+All vertices of a connected graph are included in the minimum spanning tree. Prim's algorithm starts from one vertex and grows the rest of tree by adding one vertex at a time by adding associated edge in T. This algorithm iteratively adds edges until all vertices are visited.
+
+void prims (vertex i)
+1. Start
+2. Initialize visited [ ] to 0for (i=0;i<n; i++) visited [ i ] = 0;
+3. Find minimum edge from ifor (j=0;j<n; j++)
+{
+if (min > a [i] [j])
+{
+min = a[i] [j]x = i; y = j;
+}
+}
+4. Print the edge between i and j with weight.
+5. Make visit [i++] = x
+
+visit [j++] = y
+6. Find next minimum edge starting from nodes of visit array.
+7. Repeat step 6 until all the nodes are visited.
+8. End.
+
+Conclusion: Thus we have studied and implemented minimum spanning tree concept with the help of Prims Algorithm.
+
+
+
+

@@ -1,0 +1,89 @@
+Problem Statement:
+Implement all the functions of a dictionary (ADT) using hashing and handle collisions using
+chaining with / without replacement. Data: Set of (key, value) pairs, Keys are mapped to values,
+Keys must be comparable, and Keys must be unique. Standard Operations: Insert (key, value),
+Find (key), Delete (key)
+Objectives:
+1. Understand the concept of ADT functions
+2. Understand the concept of Hashing
+3. Understand the concept of chaining with / without replacement
+Outcomes:
+1. Will be able to use concept of ADT
+2. Will be able to apply concept of chaining with/without replacement.
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+1. Hashing :
+Hashing is finding an address where the data is to be stored as well as located using a key with the
+help of the algorithmic function. The resulting address is used as the basis for storing and
+retrieving records and this address is called as home address of the record .For array to store a
+record in a hash table, hash function is applied to the key being stored, returning an index within
+the range of the hash table .The item is then stored in the table of that index position.
+2. Hash function:
+Hashing is a method of directly computing the address of the record with the help of a key by
+using a suitable mathematical function called the hash function. A function that maps a key into
+the range [0 to Max − 1], the result of which is used as an index (or address) to hash table for
+storing and retrieving record.
+3. Hash table:
+Hash table is one of the most important data structures that uses a special function known as a
+hash function that maps a given value with a key to access the elements faster. A Hash table is a
+data structure that stores some information, and the information has basically two main
+components, i.e., key and value. The hash table can be implemented with the help of an
+associative array. The efficiency of mapping depends upon the efficiency of the hash function
+used for mapping. A hash table is a data structure that stores records in an array, called a hash
+table. A Hash table can be used for quick insertion and searching.
+Here, are the Operations supported by Hash tables:
+1. Insertion – this Operation is used to add an element to the hash table
+2. Searching – this Operation is used to search for elements in the hash table using the key
+3. Deleting – this Operation is used to delete elements from the hash table
+In the real-world, hash tables are used to store data for
+1. Databases 2. Associative arrays 3. Sets 4. Memory cache.
+Collision:
+When the two different values have the same index, then the problem occurs between the two
+values, known as a collision.
+How to handle Collisions?
+There are mainly two methods to handle collision:
+1. Separate Chaining
+2. Open Addressing
+Separate Chaining:
+The idea behind separate chaining is to implement the array as a linked list called a chain.
+Separate chaining is one of the most popular and commonly used techniques in order to handle
+collisions.
+The linked list data structure is used to implement this technique. So what happens is, when
+multiple elements are hashed into the same slot index, then these elements are inserted into a
+singly-linked list which is known as a chain.
+In separate chaining, if two different elements have the same hash value then we store both the
+elements in the same linked list one after the other.
+Steps of Implementation:
+1. First draw the empty hash table which will have a possible range of hash values
+2. Now insert all the keys in the hash table one by one by calculating mod value.
+3. If slot is empty then put it at same place.
+4. If slot is not empty, then collision occur, so put it in chain one after other.
+Open Addressing:
+Like separate chaining, open addressing is a method for handling collisions. In Open
+Addressing, all elements are stored in the hash table itself. So at any point, the size of the table
+must be greater than or equal to the total number of keys (Note that we can increase table size
+by copying old data if needed). This approach is also known as closed hashing. This entire
+procedure is based upon probing. We will understand the types of probing ahead:
+ Insert(k): Keep probing until an empty slot is found. Once an empty slot is found, insert
+k.
+ Search(k): Keep probing until the slot’s key doesn’t become equal to k or an empty slot
+is reached.
+ Delete(k): Delete operation is interesting. If we simply delete a key, then the search may
+fail. So slots of deleted keys are marked specially as “deleted”.
+Different ways of Open Addressing:
+1. Linear Probing:
+In linear probing, the hash table is searched sequentially that starts from the original location of
+the hash. If in case the location that we get is already occupied, then we check for the next
+location.
+The function used for rehashing is as follows: rehash(key) = (n+1)%table-size.
+Steps of Implementation:
+1. First draw the empty hash table which will have a possible range of hash values
+2. Now insert all the keys in the hash table one by one by calculating mod value.
+3. If slot is empty then put it at same place.
+4. If slot is not empty, then collision occur, so put it in next subsequent empty place. Follow
+the linear sequential order.
+Conclusion: Thus we have implemented hashing and collision handling technique linear
+probing

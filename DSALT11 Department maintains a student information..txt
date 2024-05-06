@@ -1,0 +1,64 @@
+
+Problem Statement:
+
+EXPERIMENT NO: 12 (F)
+
+Department maintains a student information. The file contains roll number, name, division and address. Allow user to add, delete information of student. Display information of particular employee. If record of student does not exist an appropriate message is displayed. If it is, then the system displays the student details. Use sequential file to main the data.
+
+Objectives:
+1. To understand concept of file organization in data structure.
+2. To understand concept & features of sequential file organization.
+
+Outcomes:
+1. Define class for sequential file using Object Oriented features.
+2. Analyze working of various operations on sequential file .
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+File organization refers to the relationship of the key of the record to the physical locationof that record in the computer file. File organization may be either physical file or a logical file. A physical file is a physical unit, such as magnetic tape or a disk. A logical file on the other handis a complete set of records for a specific application or purpose. A logical file may occupy a part of physical file or may extend over more than one physical file.
+
+There are various methods of file organizations. These methods may be efficient for certain types of access/selection meanwhile it will turn inefficient for other selections. Hence it is up to the programmer to decide the best suited file organization method depending on his requirement.
+
+Some of the file organizations are
+1. Sequential File Organization
+2. Heap File Organization
+3. Hash/Direct File Organization
+4. Indexed Sequential Access Method
+5. B+ Tree File Organization
+6. Cluster File Organization
+Sequential File Organization:
+It is one of the simple methods of file organization. Here each file/records are stored one after the other in a sequential manner. This can be achieved in two ways:
+     Records are stored one after the other as they are inserted into the tables. This method is called pile file method. When a new record is inserted, it is placed at the end of the file.In the case of any modification or deletion of record, the record will be searched in the memory blocks. Once it is found, it will be marked for deleting and new block of recordis entered.
+
+
+
+Inserting a new record:
+
+In the diagram above, R1, R2, R3 etc are the records. They contain all the attribute of a row. i.e.; when we say student record, it will have his id, name, address, course, DOB etc. Similarly R1, R2, R3 etc can be considered as one full set of attributes.
+
+
+In the second method, records are sorted (either ascending or descending) each time they are inserted into the system. This method is called sorted file method. Sorting of records may be based on the primary key or on any other columns. Whenever a new record is inserted, it will be inserted at the end of the file and then it will sort - ascending or descending based on key value and placed at the correct position. In the case of update, it will update the record and then sort thefile to place the updated record in the right place. Same is the case with delete.
+Inserting a new record:
+
+
+Advantages:
+1. Simple to understand.
+2. Easy to maintain and organize
+3. Loading a record requires only the record key.
+4. Relatively inexpensive I/O media and devices can be used.
+5. Easy to reconstruct the files.
+6. The proportion of file records to be processed is high.
+
+Disadvantages:
+1. Entire file must be processed, to get specific information.
+2. Very low activity rate stored.
+3. Transactions must be stored and placed in sequence prior to processing.
+4. Data redundancy is high, as same data can be stored at different places with differentkeys.
+
+Conclusion: Thus we have studied and implemented concept of	file organization in data structure
+
+
+
+

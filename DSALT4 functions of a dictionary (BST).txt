@@ -1,0 +1,24 @@
+Problem Statement:
+A dictionary stores keywords and its meaning...... use bst
+Objectives:
+1. Understand the concept of ADT functions
+2. Understand the concept of Hashing
+3. Understand the concept of chaining with / without replacement
+Outcomes:
+1. Will be able to use BST
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Dev C++ compiler
+Theory:-
+BST- A bst is a binary tree,which is easier empty or in which each node contains a key that satisfies the following condition:
+	1.All keys are distinct
+	2.For every node x, in the tree, the values of all the keys in its left subtree are smaller than the key value in x
+	3.All keys in its right subtree are larger than the key value in x.
+Deletion operation in bst- In order to delete a node, we must find the node to be deleted may be:
+	1.A leaf node
+	2.A node with one child
+	3.A node with two child
+(Draw diagrams)
+Conclusion: Thus we have implemented hashing and collision handling technique linear
+probing

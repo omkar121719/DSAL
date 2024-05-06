@@ -1,0 +1,195 @@
+EXPERIMENT NO: 9 (D)
+Problem Statement:
+Given sequence k = k1 <k2 < ... <kn of n sorted keys, with a search probability pi for each key ki . Build the Binary search tree that has the least search cost given the access probability for each key?
+
+Objectives:
+1. To understand concept of OBST.
+2. To understand concept & features like extended binary search tree.
+Outcomes:
+1. Define class for Extended binary search tree using Object Oriented features.
+2. Analyze working of functions.
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+An optimal binary search tree is a binary search tree for which the nodes are arranged on levels such that the tree cost is minimum.
+For the purpose of a better presentation of optimal binary search trees, we will consider "extended binary search trees", which have the keys stored at their internal nodes. Suppose "n" keys k1, k2, ... k n are stored at the internal nodes of a binary search tree. It is assumed that the keys are given in sorted order, so that k1< k2 < ... < kn.
+An extended binary search tree is obtained from the binary search tree by adding successor nodes to each of its terminal nodes as indicated in the following figure by squares:
+
+In the extended tree:
+* The squares represent terminal nodes. These terminal nodes represent unsuccessful searches of the tree for key values. The searches did not end successfully, that is, because they represent key values that are not actually stored in the tree;
+* The round nodes represent internal nodes; these are the actual keys stored in the tree;
+* Assuming that the relative frequency with which each key value is accessed is known, weights can be assigned to each node of the extended tree (p1 ... p6). They represent the
+
+relative frequencies of searches terminating at each node, that is, they mark the successful searches.
+* If the user searches a particular key in the tree, 2 cases can occur:
+* 1 - the key is found, so the corresponding weight "p" is incremented;
+* 2 - the key is not found, so the corresponding "q" value is incremented.
+
+GENERALIZATION:
+
+The terminal node in the extended tree that is the left successor of k1 can be interpreted as representing all key values that are not stored and are less than k1. Similarly, the terminal node in the extended tree that is the right successor of kn, represents all key values not stored in the tree that are greater than kn. The terminal node that is successes between ki and ki-1 in an inorder traversal represent all key values not stored that lie between ki and ki
+- 1.
+
+ALGORITHMS
+We have the following procedure for determining R(i, j) and C(i, j) with 0 <= i <= j <= n: PROCEDURE COMPUTE_ROOT(n, p, q; R, C)
+begin
+for i = 0 to n doC (i, i) ?0
+W (i, i) ?q(i) for m = 0 to n do for i = 0 to (n - m) doj ?i + m
+W (i, j) ?W (i, j - 1) + p (j) + q (j)
+*find C (i, j) and R (i, j) which minimize thetree cost end
+The following function builds an optimal binary search tree FUNCTION CONSTRUCT(R, i, j)
+begin
+*build a new internal node N labeled (i, j)k ?R (i, j) f i = k then
+*build a new leaf node N" labeled (i, i)else
+*N" ?CONSTRUCT(R, i, k)
+*N" is the left child of node Nif k = (j - 1) then
+*build a new leaf node N"" labeled (j, j)else
+*N"" ?CONSTRUCT(R, k + 1, j)
+*N"" is the right child of node Nreturn N end
+
+COMPLEXITY ANALYSIS:
+The algorithm requires O (n2) time and O (n2) storage. Therefore, as "n" increases it will run outof storage even before it runs out of time. The storage needed can be reduced by almost half by implementing the two-dimensional arrays as one-dimensional arrays.
+
+Conclusion: Thus we have studied and implemented OBST concept with extended binary search tree feature.
+
+EXPERIMENT NO: 10 (D)
+Problem Statement:
+A Dictionary stores keywords and its meanings. Provide facility for adding new keywords, deleting keywords, updating values of any entry. Provide facility to display whole data sorted in ascending/ Descending order. Also find how many maximum comparisons may require for finding any keyword. Use Height balance tree and find the complexity for finding a keyword
+
+Objectives:
+1. To understand concept of height balanced tree data structure.
+2. To understand procedure to create height balanced tree.
+Outcomes:
+1. Define class for AVL using Object Oriented features.
+2. Analyze working of various operations on AVL Tree .
+
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+An empty tree is height balanced tree if T is a nonempty binary tree with TL and TR asits left and right sub trees. The T is height balance if and only if Its balance factor is 0, 1, -1.
+
+AVL (Adelson- Velskii and Landis) Tree: A balance binary search tree. The best searchtime, that is O (log N) search times. An AVL tree is defined to be a well-balanced binary search tree in which each of its nodes has the AVL property. The AVL property is that the heights of theleft and right sub-trees of a node are either equal or if they differ only by 1.
+What if the input to binary search tree comes in a sorted (ascending or descending) manner? It will then look like this -
+
+
+
+It is observed that BST's worst-case performance is closest to linear search algorithms, that is ?(n). In real-time data, we cannot predict data pattern and their frequencies. So, a need arises to balance out the existing BST.
+
+Named after their inventor Adelson, Velski & Landis, AVL trees are height balancing binary search tree. AVL tree checks the height of the left and the right sub-trees and assures that the difference is not more than 1. This difference is called the Balance Factor.
+
+Here we see that the first tree is balanced and the next two trees are not balanced -
+
+In the second tree, the left subtree of C has height 2 and the right subtree has height 0, so the difference is 2. In the third tree, the right subtree of A has height 2 and the left is missing, soit is 0, and the difference is 2 again. AVL tree permits difference (balance factor) to be only 1.
+
+BalanceFactor = height(left-sutree) - height(right-sutree)
+
+If the difference in the height of left and right sub-trees is more than 1, the tree is balanced usingsome rotation techniques.
+AVL Rotations
+To balance itself, an AVL tree may perform the following four kinds of rotations - Left rotation
+Right rotation
+Left-Right rotation Right-Left rotation
+
+The first two rotations are single rotations and the next two rotations are double rotations. To have an unbalanced tree, we at least need a tree of height 2. With this simple tree, let's understand them one by one.
+Left Rotation
+If a tree becomes unbalanced, when a node is inserted into the right subtree of the right subtree, then we perform a single left rotation -
+In our example, node A has become unbalanced as a node is inserted in the right subtreeof A's right subtree. We perform the left rotation by making A the left-subtree of B.
+
+
+
+
+Right Rotation
+AVL tree may become unbalanced, if a node is inserted in the left subtree of the left subtree. The tree then needs a right rotation.
+
+As depicted, the unbalanced node becomes the right child of its left child by performing a rightrotation.
+
+Left-Right Rotation
+Double rotations are slightly complex version of already explained versions of rotations. To understand them better, we should take note of each action performed while rotation. Let's first check how to perform Left-Right rotation. A left-right rotation is a combination of left rotation followed by right rotation.
+
+StateAction
+
+A node has been inserted into the right subtree of the left subtree. This makes C an unbalanced node. These scenarios cause AVL treeto perform left-right rotation.
+
+
+
+We first perform the left rotation on the left subtree of C. Thismakes A, the left subtree of B.
+
+Node C is still unbalanced, however now, it is because of the left-subtree of the left-subtree.
+We shall now right-rotate the tree, making B the new root node of this subtree. C now becomes the right subtree of its own left subtree.
+The tree is now balanced.
+Right-Left Rotation
+The second type of double rotation is Right-Left Rotation. It is a combination of right rotation followed by left rotation.
+StateAction
+
+A node has been inserted into the left subtree of the right subtree.This makes A, an unbalanced node with balance factor 2.
+
+First, we perform the right rotation along C node, making C the right subtree of its own left subtree B. Now, B becomes the right subtree of A.
+
+Node A is still unbalanced because of the right subtree of its right subtree and requires a left rotation.
+
+A left rotation is performed by making B the new root node of the subtree. A becomes the left subtree of its right subtree B.
+The tree is now balanced.
+
+
+Algorithm AVL TREE:
+Insert:-
+1. If P is NULL, then
+I. P = new node
+II. P ->element = x
+III. P ->left = NULL
+IV. P ->right = NULL
+V. P ->height = 0
+2. else if x>1 => x<P -
+>elementa.) insert(x, P ->left)
+
+b.) if height of P->left -height of P ->right =2
+1. insert(x, P ->left)
+
+2. if height(P ->left) -height(P ->right) =2if x<P ->left ->element P =singlerotateleft(P)
+else
+P =doublerotateleft(P)
+3. else	if x<P -
+>element
+a.) insert(x, P -> right)
+b.) if height (P -> right) -height (P ->left) =2if(x<P ->right)->element P =singlerotateright(P)
+else
+P =doublerotateright(P)
+4. else
+Print already exits
+5. int m, n, d.
+6. m = AVL height (P->left)
+7. n = AVL height (P->right)
+8. d = max(m, n)
+9. P->height = d+1
+10. Stop
+RotateWithLeftChild( AvlNode k2 )
+> AvlNode k1 = k2.left;
+> k2.left = k1.right;
+> k1.right = k2;
+> k2.height = max( height( k2.left ), height( k2.right ) ) + 1;
+> k1.height = max( height( k1.left ), k2.height ) + 1;
+> return k1;
+RotateWithRightChild( AvlNode k1 )
+> AvlNode k2 = k1.right;
+> k1.right = k2.left;
+> k2.left = k1;
+> k1.height = max( height( k1.left ), height( k1.right ) ) + 1;
+> k2.height = max( height( k2.right ), k1.height ) + 1;
+> return k2;
+
+DoubleWithLeftChild( AvlNode k3)
+> k3.left = rotateWithRightChild( k3.left );
+> return rotateWithLeftChild( k3 );
+
+DoubleWithRightChild( AvlNode k1 )
+> k1.right = rotateWithLeftChild( k1.right );
+> return rotateWithRightChild( k1 );
+
+Conclusion: Thus we have studied and implemented concept of AVL Tree with its operations.
+
+
+
+
